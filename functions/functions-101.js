@@ -1,4 +1,6 @@
 let tempCon = f => {
   return (f - 32) / 1.8;
 };
-console.log(tempCon(90));
+
+// let c = tempCon(39);
+console.log(tempCon(98));

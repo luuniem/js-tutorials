@@ -11,5 +11,11 @@
     "prefix": "genMath",
     "body": ["Math.floor(Math.random() * ($1-$2 + 1)) + $2"],
     "description": "Generate random number between max and min"
+  },
+  "Last item of array": {
+    "scope": "javascript,typescript",
+    "prefix": "getLastArrayItem",
+    "body": ["$1[$2.length -1]"],
+    "description": "Get the last item of the array list"
   }
 }

@@ -1,28 +1,60 @@
 const todos = [
-  "Learn JS",
-  "Learn React",
-  "Watch Game of Thrones",
-  "Get Better Job",
-  "Go on Vacation"
+  {
+    text: "order cat Food",
+    completed: true
+  },
+  {
+    text: "clean kitchen",
+    completed: false
+  },
+  {
+    text: "buy food",
+    completed: false
+  },
+  {
+    text: "learn react",
+    completed: true
+  },
+  {
+    text: "learn js",
+    completed: true
+  }
 ];
 
-// console.log(
-//   `You have ${todos.length} things you need to do. They are ${todos[0]}, ${
-//     todos[3]
-//   }, and ${todos[todos.length - 1]}.`
-// );
+const sortTodos = function(todoList) {
+  todoList.sort(function(a, b) {
+    if (!a.completed && b.completed) {
+      return -1;
+    } else if (!b.completed && a.completed) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+};
+console.log(sortTodos(todos));
+console.log(todos);
+// const deleteTodo = function(todos, textValue) {
+//   const itemIndex = todos.findIndex(function(item) {
+//     return item.text.toLowerCase() === textValue.toLowerCase();
+//   });
 
-// todos.splice(3, 1, "This is the new 2nd item");
+//   if (itemIndex > -1) {
+//     todos.splice(itemIndex, 1);
+//   }
+// };
 
-// console.log(todos.length);
+// deleteTodo(todos, "learn jS");
 // console.log(todos);
 
-// todos.forEach(function(item, index) {
-//   console.log(index);
-//   console.log(item);
-// });
+// const filterTodos = function(todos, todoText) {
+//   return todos.filter(function(todoItem, index) {
+//     const filtertext = todoItem.text
+//       .toLowerCase()
+//       .includes(todoText.toLowerCase());
+//     return filtertext || !todoItem.completed;
+//   });
+// };
 
-todos.map((item, index) => {
-  const num = index + 1;
-  console.log(`${num}. ${item}`);
-});
+// console.log(filterTodos(todos, "learn react"));
+// console.log(todos);

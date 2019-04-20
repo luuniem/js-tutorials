@@ -17,5 +17,49 @@
     "prefix": "getLastArrayItem",
     "body": ["$1[$2.length -1]"],
     "description": "Get the last item of the array list"
+  },
+  "Query Selector ID": {
+    "scope": "javascript,typescript",
+    "prefix": "idSelector",
+    "body": ["document.querySelector('$1')"],
+    "description": "Get query selector"
+  },
+  "Query Selector Class": {
+    "scope": "javascript,typescript",
+    "prefix": "classSelector",
+    "body": ["document.querySelectorAll('$1')"],
+    "description": "Get query selector"
+  },
+  "Event Listener Click Function": {
+    "scope": "javascript,typescript",
+    "prefix": "addClick",
+    "body": ["addEventListener('click', function(){$1})"],
+    "description": "Add Event Listener Click Function"
+  },
+  "Filter Function": {
+    "scope": "javascript,typescript",
+    "prefix": "filterFunction",
+    "body": ["const $1 = $2.filter(function($3){$4})"],
+    "description": "Add filter function"
+  },
+  "Create Element": {
+    "scope": "javascript,typescript",
+    "prefix": "createElement",
+    "body": ["const $1 = document.createElement('$2')"],
+    "description": "Create element"
+  },
+  "For Each Function": {
+    "scope": "javascript,typescript",
+    "prefix": "forEachFunction",
+    "body": ["$1.forEach(function($2){$3})"],
+    "description": "For Each function"
+  },
+  "Notes for filtering": {
+    "scope": "javascript,typescript",
+    "prefix": "filterNotes",
+    "body": [
+      "//1. set an empty searchText: '' object. This object is going to be from the userInput \n //2. create a function renderObject the current list of notes and include the searchText so the function can find the filtered section of the renderObject. \n //3. clear out the <div> where the result appends to with innerHTML \n //4. Use forEach function to find the filteredItem from the renderObject. Then create an element for that filtered item, give it a textContent of it's item name from the object. Then appendChild to the reulst list. Call the renderObject function of the object and the filtered list. \n //5. Add event listener with the input function on the search field. \n //6.Set the filters.searchText to the target of the input. \n call the renderObject function with the object and filters as arguments"
+    ],
+    "description": "Filter a list of todos by text search in an input search box."
   }
 }

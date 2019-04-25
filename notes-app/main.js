@@ -17,6 +17,11 @@ const filters = {
   searchText: ""
 };
 
+// localStorage.setItem("location", "Vancouver");
+console.log(localStorage.getItem("location"));
+
+localStorage.removeItem("location");
+
 const renderNotes = function(notes, filters) {
   const filteredNotes = notes.filter(function(note) {
     return note.title.toLowerCase().includes(filters.searchText.toLowerCase());
@@ -50,6 +55,6 @@ document.querySelector("#name-form").addEventListener("submit", function(e) {
   e.target.elements.firstName.value = "";
 });
 
-document.querySelector("#for-fun").addEventListener("change", function(e) {
-  console.log(e.target.checked);
+document.querySelector("#filter-by").addEventListener("change", function(e) {
+  console.log(e.target.value);
 });
